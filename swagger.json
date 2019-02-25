@@ -1,0 +1,385 @@
+{
+    "swagger": "2.0",
+    "info":{
+        "description":"This is a sample server Assignment.","version":"1.0.0",
+        "title":"Assignment3",
+        "host":"localhost:3003",
+        "basePath":"/",
+        "schemes":[
+            "http"
+            ]
+        },
+        "paths":{
+                "/home/signup":{
+                    "put":{
+                        "tags":["home - signup"],
+                        "summary":"Onload user and update database.",
+                        "description":"",
+                        "operationId":"updateUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"formData",
+                                    "name":"email",
+                                    "description":"Email",
+                                    "required":true
+                                },
+                                {
+                                    "in":"formData",
+                                    "name":"name",
+                                    "description":"Name",
+                                    "required":true
+                                },
+                                {
+                                    "in":"formData",
+                                    "name":"password",
+                                    "description":"Password",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/home/login":{
+                    "put":{
+                        "tags":["home - login"],
+                        "summary":"Login with user credential to generate token.",
+                        "description":"",
+                        "operationId":"updateUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"formData",
+                                    "name":"email",
+                                    "description":"Email",
+                                    "required":true
+                                },
+                                {
+                                    "in":"formData",
+                                    "name":"password",
+                                    "description":"Password",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/home/delete/{id}":{
+                    "delete":{
+                        "tags":["home - delete:id"],
+                        "summary":"Delete user with id (in URL params) only if token is valid.",
+                        "description":"",
+                        "operationId":"deleteUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"formData",
+                                    "name":"token",
+                                    "description":"Token to validate",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"id",
+                                    "description":"User ID",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+            "/records/users":{
+                "get":{
+                    "tags":["records - all usernames"],
+                    "summary":"Get the details of all users.",
+                    "description":"",
+                    "operationId":"getUsers",
+                    "consumes":["application/json"],
+                    "produces":["application/json"],
+                    "parameters":[],
+                    "responses":{
+                        "200":{"description":"success"}
+                        },
+                    "security":{}
+                    }
+                },
+                "/records/data":{
+                    "post":{
+                        "tags":["records - userdata"],
+                        "summary":"Add new user with details.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"formData",
+                                    "name":"name",
+                                    "description":"Username",
+                                    "required":true
+                                },
+                                {
+                                    "in":"formData",
+                                    "name":"password",
+                                    "description":"Password",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                }  ,
+                "/other/callback/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - callback"],
+                        "summary":"Read Three Files using callbacks.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/promises/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - promises"],
+                        "summary":"Read Three Files with promises.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/async-await/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - async-await"],
+                        "summary":"Read Three Files with async-await.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/genfunction/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - genFunction"],
+                        "summary":"Read Three Files with genFunction.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/waterfall/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - waterfall"],
+                        "summary":"Read Three Files with async-waterfall.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/series/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - series"],
+                        "summary":"Read Three Files with async-series.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                },
+                "/other/parallel/{one}&{two}&{three}":{
+                    "get":{
+                        "tags":["other - parallel"],
+                        "summary":"Read Three Files with async-parallel.",
+                        "description":"",
+                        "operationId":"addUsers",
+                        "consumes":"application/json",
+                        "produces":"application/json",
+                        "parameters":[
+                                {
+                                    "in":"path",
+                                    "name":"one",
+                                    "description":"Filename 1",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"two",
+                                    "description":"Filename 2",
+                                    "required":true
+                                },
+                                {
+                                    "in":"path",
+                                    "name":"three",
+                                    "description":"Filename 3",
+                                    "required":true
+                                }
+                            ],
+                        "responses":{
+                            "200":{"description":"success"}
+                            },
+                        "security":{}
+                        }
+                }   
+            }
+}
