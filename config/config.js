@@ -3,7 +3,7 @@ module.exports = {
         DB_USER                 :       "root",
         DB_PASSWORD             :       "password",
         DB_NAME                 :       "testdb",
-        PORT                    :       3003,
+        PORT                    :       3001,
         SECRET_KEY              :       "ParkTheBus", //Secret Key for JWT
         GLOBAL_USERS            :       [],
         defaultJSON             :       {
